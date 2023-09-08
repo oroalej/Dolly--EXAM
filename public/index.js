@@ -11,15 +11,12 @@ window.addEventListener("load", () => {
 
           const elementId = entry.target.getAttribute("id");
 
-          // Assign active status to target side nagivation item
+          // Assign active status
           document
-            .querySelector(`[data-target=${elementId}]`)
-            ?.classList.add("active");
-
-          // Assign active status to header nav item
-          document
-            .querySelector(`a[href="#${elementId}"]`)
-            ?.classList.add("active");
+            .querySelectorAll(
+              `span[data-target=${elementId}], a[href="#${elementId}"]`
+            )
+            .forEach((element) => element.classList.add("active"));
         }
       });
     },
