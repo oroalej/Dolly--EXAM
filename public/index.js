@@ -4,15 +4,10 @@ window.addEventListener("load", () => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.boundingClientRect.y <= 0) {
-          // Remove side navigation active status
+          // Remove active status
           document
-            .querySelectorAll("span[data-target].active")
+            .querySelectorAll("span[data-target].active, .nav--item.active")
             .forEach((span) => span.classList.remove("active"));
-
-          // Remove header nav active status
-          document
-            .querySelectorAll(".nav--item.active")
-            .forEach((navItem) => navItem.classList.remove("active"));
 
           const elementId = entry.target.getAttribute("id");
 
